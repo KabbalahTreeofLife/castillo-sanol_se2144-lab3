@@ -1,0 +1,7 @@
+info:
+  name: Customer API
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

@@ -6,7 +6,7 @@
     "lib": ["esnext"],
     "types": ["node"],
     "esModuleInterop": true,
-    
+
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,

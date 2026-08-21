@@ -8,7 +8,7 @@ export interface Customer {
 export interface Order {
   order_id?: string;
   customer_id: string;
-  order_date: Date;
+  order_date: string;
   shipping_city: string;
 }
 

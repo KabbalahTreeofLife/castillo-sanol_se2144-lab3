@@ -4,8 +4,9 @@ import { Customer } from '../types';
 
 const router = Router();
 
-// GET ALL customers
+// GET /api/v1/customers
 router.get('/', async (_req: Request, res: Response) => {
+
     try {
         const result = await pool.query('SELECT * FROM customer');
         res.json(result.rows);
@@ -14,7 +15,7 @@ router.get('/', async (_req: Request, res: Response) => {
     }
 });
 
-// GET customer by ID
+// GET /api/v1/customers/:id
 router.get("/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
 
@@ -29,7 +30,7 @@ router.get("/:id", async (req: Request, res: Response) => {
   }
 });
 
-// POST a new customer
+// POST /api/v1/customers
 router.post('/', async (req: Request, res: Response) => {
     const { customer_id, customer_name, city, membership_level }: Customer = req.body;
 
@@ -41,7 +42,7 @@ router.post('/', async (req: Request, res: Response) => {
     }
 });
 
-// PUT (update) a customer by ID
+// PUT /api/v1/customers/:id
 router.put('/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
     const { city, membership_level }: Customer = req.body;
@@ -57,7 +58,7 @@ router.put('/:id', async (req: Request, res: Response) => {
     }
 });
 
-// DELETE a customer by ID
+// DELETE /api/v1/customers/:id
 router.delete('/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
 

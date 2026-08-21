@@ -12,4 +12,4 @@ app.use('/api/v1/customers', customerRoutes);
 
 app.listen(PORT, () => {
   console.log(`Customer API server running on http://localhost:${PORT}`);
-});``
+});

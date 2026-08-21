@@ -54,6 +54,10 @@ A Node.js/TypeScript backend API built with **Express** and **node-postgres (`pg
 
    The API listens on `http://localhost:3000`.
 
+## Testing
+
+The `api-tests/` directory is a [Bruno](https://www.usebruno.com/) collection covering every endpoint, including edge cases (404s, validation errors, FK-violation handling). Open the folder in Bruno and run requests against `http://localhost:3000`.
+
 ## API Endpoints
 
 All endpoints are prefixed with `/api/v1`. Request/response bodies are JSON.
@@ -65,7 +69,7 @@ All endpoints are prefixed with `/api/v1`. Request/response bodies are JSON.
 | GET | `/` | List all customers |
 | GET | `/:id` | Get one customer (404 if missing) |
 | POST | `/` | Create a customer |
-| PUT | `/:id` | Update `city` / `membership_level` |
+| PUT | `/:id` | Update `city` and/or `membership_level` (partial updates supported) |
 | DELETE | `/:id` | Delete a customer |
 
 ### Products — `/api/v1/products`
@@ -123,8 +127,9 @@ src/
     ├── productRoutes.ts   # /api/v1/products
     ├── orderRoutes.ts     # /api/v1/orders
     ├── orderItemRoutes.ts # /api/v1/order-items
-    └── vendorSupplyRoutes.ts # /api/v1/vendors, /api/v1/supplies
+    ├── vendorRoutes.ts    # /api/v1/vendors
+    └── supplyRoutes.ts    # /api/v1/supplies
 sql/
 └── schema.sql             # DDL + seed data
-api-tests/                 # API test collections
+api-tests/                 # Bruno collection — one folder per resource
 ```

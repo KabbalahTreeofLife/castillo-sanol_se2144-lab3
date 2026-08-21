@@ -1,0 +1,7 @@
+info:
+  name: Order Items API
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

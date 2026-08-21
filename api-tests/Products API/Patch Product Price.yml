@@ -1,0 +1,21 @@
+info:
+  name: Patch Product Price
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: http://localhost:3000/api/v1/products/P006/price
+  body:
+    type: json
+    data: |-
+      {
+        "unit_price": 99.99
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

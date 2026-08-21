@@ -1,0 +1,24 @@
+info:
+  name: Post New Order Item
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://localhost:3000/api/v1/order-items
+  body:
+    type: json
+    data: |-
+      {
+        "order_id": "O501",
+        "product_id": "P003",
+        "quantity": 1,
+        "discount": 0.0
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

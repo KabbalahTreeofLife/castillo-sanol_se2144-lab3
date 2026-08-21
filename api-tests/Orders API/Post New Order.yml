@@ -1,0 +1,24 @@
+info:
+  name: Post New Order
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:3000/api/v1/orders
+  body:
+    type: json
+    data: |-
+      {
+        "order_id": "O505",
+        "customer_id": "C101",
+        "order_date": "2026-08-19",
+        "shipping_city": "Seattle"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

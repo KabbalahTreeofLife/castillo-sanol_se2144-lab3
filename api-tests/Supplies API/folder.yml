@@ -1,0 +1,7 @@
+info:
+  name: Supplies API
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

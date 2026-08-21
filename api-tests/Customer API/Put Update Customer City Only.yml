@@ -1,0 +1,21 @@
+info:
+  name: Put Update Customer City Only
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: http://localhost:3000/api/v1/customers/C102
+  body:
+    type: json
+    data: |-
+      {
+        "city": "Portland"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

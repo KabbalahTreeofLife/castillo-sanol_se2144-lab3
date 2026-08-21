@@ -14,7 +14,7 @@ router.get('/', async (_req: Request, res: Response) => {
     }
 });
 
-// GET all orders for a specific customer (no JOIN)
+// GET all orders for a specific customer
 router.get('/customer/:customerId', async (req: Request, res: Response) => {
     const { customerId } = req.params;
 

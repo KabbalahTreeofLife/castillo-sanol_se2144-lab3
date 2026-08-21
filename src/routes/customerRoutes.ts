@@ -42,6 +42,9 @@ router.post('/', async (req: Request, res: Response) => {
         const result = await pool.query<Customer>(`INSERT INTO customer (customer_id, customer_name, city, membership_level) VALUES ($1, $2, $3, $4) RETURNING *`, [customer_id, customer_name, city, membership_level]);
         res.status(201).json(result.rows[0]);
     } catch (error) {
+        if ((error as { code?: string }).code === '23505') {
+            return res.status(400).json({ error: 'Customer ID already exists' });
+        }
         res.status(500).json({ error: (error as Error).message });
     }
 });
